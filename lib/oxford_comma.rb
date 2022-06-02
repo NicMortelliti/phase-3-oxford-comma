@@ -4,8 +4,6 @@ def oxford_comma(array)
   when 1 then array.join
   when 2 then array.join(' and ')
   else
-    new_string = [array[0..-2].join(', ')]
-    new_string << array.last
-    new_string.join(", and ")
+    [[array[0...-1].join(', ')], array.last].join(', and ')
   end
 end
